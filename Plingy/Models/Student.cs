@@ -19,6 +19,6 @@ namespace Plingy.Models
         public bool ActiveStudent { get; set; }
         public string Address { get; set; }
 
-        public ICollection<Allergies> Allergies { get; set; } // Holds all allergy entities related to the respective student.
+        public ICollection<Allergies> StudentsAllergies { get; set; } // Holds all allergy entities related to the respective student.
     }
 }

@@ -1,0 +1,51 @@
+@model Plingy.Models.StudentAllergiesViewModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Demo - Index of students</h1>
+
+<p>
+    <a asp-action="Create">Add new student</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Student name</th>
+            <th>Active student</th>
+            <th>Join date</th>
+            <th>Adress</th>
+            <th>Allergies</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Students) 
+        {
+            <tr class="success">
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ActiveStudent)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.JoinDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Address)
+                </td>
+                <td>
+                    @{
+                        foreach (var allergy in item.StudentsAllergies)
+                        {
+                            @allergy.Allergy <br />
+                        }
+                    }
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

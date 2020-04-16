@@ -1,5 +1,5 @@
 {
-  "FilePath": "c:\\Users\\Admin-dator\\student-website\\Plingy\\Plingy.csproj",
+  "FilePath": "c:\\Users\\Admin-dator\\plingy-student-website\\Plingy\\Plingy.csproj",
   "Configuration": {
     "ConfigurationName": "MVC-3.0",
     "LanguageVersion": "3.0",
@@ -20521,38 +20521,93 @@
   "RootNamespace": "Plingy",
   "Documents": [
     {
-      "FilePath": "c:\\Users\\Admin-dator\\student-website\\Plingy\\Views\\Home\\Index.cshtml",
-      "TargetPath": "Views\\Home\\Index.cshtml",
+      "FilePath": "c:\\Users\\Admin-dator\\plingy-student-website\\Plingy\\Views\\Demo\\Create.cshtml",
+      "TargetPath": "Views\\Demo\\Create.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\Users\\Admin-dator\\student-website\\Plingy\\Views\\Shared\\_Layout.cshtml",
-      "TargetPath": "Views\\Shared\\_Layout.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\Admin-dator\\student-website\\Plingy\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
-      "TargetPath": "Views\\Shared\\_ValidationScriptsPartial.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\Admin-dator\\student-website\\Plingy\\Views\\_ViewImports.cshtml",
-      "TargetPath": "Views\\_ViewImports.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\Admin-dator\\student-website\\Plingy\\Views\\Shared\\Error.cshtml",
+      "FilePath": "c:\\Users\\Admin-dator\\plingy-student-website\\Plingy\\Views\\Shared\\Error.cshtml",
       "TargetPath": "Views\\Shared\\Error.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\Users\\Admin-dator\\student-website\\Plingy\\Views\\_ViewStart.cshtml",
+      "FilePath": "c:\\Users\\Admin-dator\\plingy-student-website\\Plingy\\Views\\Allergies\\Delete.cshtml",
+      "TargetPath": "Views\\Allergies\\Delete.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Admin-dator\\plingy-student-website\\Plingy\\Views\\Allergies\\Details.cshtml",
+      "TargetPath": "Views\\Allergies\\Details.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Admin-dator\\plingy-student-website\\Plingy\\Views\\_ViewImports.cshtml",
+      "TargetPath": "Views\\_ViewImports.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Admin-dator\\plingy-student-website\\Plingy\\Views\\Home\\Index.cshtml",
+      "TargetPath": "Views\\Home\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Admin-dator\\plingy-student-website\\Plingy\\Views\\Demo\\Index.cshtml",
+      "TargetPath": "Views\\Demo\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Admin-dator\\plingy-student-website\\Plingy\\Views\\_ViewStart.cshtml",
       "TargetPath": "Views\\_ViewStart.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\Users\\Admin-dator\\student-website\\Plingy\\Views\\Home\\Privacy.cshtml",
-      "TargetPath": "Views\\Home\\Privacy.cshtml",
+      "FilePath": "c:\\Users\\Admin-dator\\plingy-student-website\\Plingy\\Views\\Student\\Index.cshtml",
+      "TargetPath": "Views\\Student\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Admin-dator\\plingy-student-website\\Plingy\\Views\\Shared\\_Layout.cshtml",
+      "TargetPath": "Views\\Shared\\_Layout.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Admin-dator\\plingy-student-website\\Plingy\\Views\\Student\\Delete.cshtml",
+      "TargetPath": "Views\\Student\\Delete.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Admin-dator\\plingy-student-website\\Plingy\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
+      "TargetPath": "Views\\Shared\\_ValidationScriptsPartial.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Admin-dator\\plingy-student-website\\Plingy\\Views\\Student\\Details.cshtml",
+      "TargetPath": "Views\\Student\\Details.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Admin-dator\\plingy-student-website\\Plingy\\Views\\Allergies\\Index.cshtml",
+      "TargetPath": "Views\\Allergies\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Admin-dator\\plingy-student-website\\Plingy\\Views\\Allergies\\Create.cshtml",
+      "TargetPath": "Views\\Allergies\\Create.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Admin-dator\\plingy-student-website\\Plingy\\Views\\Allergies\\Edit.cshtml",
+      "TargetPath": "Views\\Allergies\\Edit.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Admin-dator\\plingy-student-website\\Plingy\\Views\\Student\\Create.cshtml",
+      "TargetPath": "Views\\Student\\Create.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Admin-dator\\plingy-student-website\\Plingy\\Views\\Student\\Edit.cshtml",
+      "TargetPath": "Views\\Student\\Edit.cshtml",
       "FileKind": "mvc"
     }
   ],

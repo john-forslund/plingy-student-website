@@ -5,6 +5,8 @@ namespace Plingy.Models
 {
     public class Allergies
     {
+     
+        public int AllergiesID { get; set; }
         public int StudentID { get; set; }
 
         [Required]
