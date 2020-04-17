@@ -19,14 +19,31 @@ namespace Plingy.Controllers
         }
 
         // GET: Demo
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string searchName, string searchAddress, string activeOrNot)
         {
-            var viewModel = new StudentAllergiesViewModel();
-            viewModel.Students = await _context.Student
-                .Include(a => a.StudentsAllergies)
-                .ToListAsync();
 
-            return View(viewModel);
+            IQueryable<Student> student = _context.Student
+                                            .Include(a => a.StudentsAllergies);
+            if (!String.IsNullOrEmpty(searchName))
+            {
+                student = student.Where(s => s.Name.Contains(searchName));
+            }
+            if (!String.IsNullOrEmpty(searchAddress))
+            {
+                student = student.Where(s => s.Address.Contains(searchAddress));
+            }
+            if (!String.IsNullOrEmpty(activeOrNot))
+            {
+                if (activeOrNot == "active")
+                {
+                    student = student.Where(s => s.ActiveStudent.Equals(true));
+                }
+                else {
+                    student = student.Where(s => s.ActiveStudent.Equals(false));
+                }
+            }
+
+            return View(await student.ToListAsync());
         }
 
         // GET: Demo/Details/5

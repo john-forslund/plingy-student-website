@@ -1,4 +1,4 @@
-@model Plingy.Models.StudentAllergiesViewModel
+@model IEnumerable<Plingy.Models.Student>
 
 @{
     ViewData["Title"] = "Index";
@@ -10,6 +10,25 @@
     <a asp-action="Create">Add new student</a>
 </p>
 
+<form asp-controller="Demo" asp-action="Index" method="get">
+    <tr> 
+        <td>
+            Name: <input type="text" name="searchName">
+        </td>
+        <td>
+            Address: <input type="text" name="searchAddress">
+        </td>
+        <td>
+            Active student: <select id="activeOrNot" name="activeOrNot">
+                <option value="active">Active only</option>
+                <option value="inactive">Inactive only</option>
+                <option value="" selected="selected">Show both</option>
+            </select>
+            <input type="submit" value="Filter" />
+        </td>
+    </tr>
+</form>
+<br/>
 <table class="table">
     <thead>
         <tr>
@@ -20,7 +39,7 @@
         </tr>
     </thead>
     <tbody>
-        @foreach (var item in Model.Students) 
+        @foreach (var item in Model) 
         {
             <tr class="success">
                 <td>
