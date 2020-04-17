@@ -71,15 +71,25 @@ namespace Plingy.Controllers
                 //_context.Add(allergy);
                 //await _context.SaveChangesAsync();
 
-                var allergies = new List<Allergies>();
-                Console.WriteLine("selectedAllergies:", selectedAllergies);
-                for (var i = 0; i < selectedAllergies.Length; i++) {
-                    Console.WriteLine("i=", 1);
-                    allergies.Add(new Allergies { StudentID = student.StudentID,
-                                                Allergy = selectedAllergies[i]});
+                if (selectedAllergies.Length != 0) {
+                    var allergies = new List<Allergies>();
+                    Console.WriteLine("selectedAllergies.Length:" + selectedAllergies.Length);
+                    Console.WriteLine("selectedAllergies:");
+                    Array.ForEach(selectedAllergies, Console.WriteLine);
+                    for (var i = 0; i < selectedAllergies.Length; i++) {
+                        if (String.IsNullOrEmpty(selectedAllergies[i]) == false) {
+                            Console.WriteLine(selectedAllergies[i] + " is NOT empty!");
+                            allergies.Add(new Allergies { StudentID = student.StudentID,
+                                                        Allergy = selectedAllergies[i]});
+                        } else {
+                            Console.WriteLine(selectedAllergies[i] + " is empty!");
+                        }
+                    }
+                    _context.AddRange(allergies);
+                    await _context.SaveChangesAsync();
+                } else {
+                    Console.WriteLine("selectedAllergies empty!");
                 }
-                _context.AddRange(allergies);
-                await _context.SaveChangesAsync();
                 
                 
                 return RedirectToAction(nameof(Index));
