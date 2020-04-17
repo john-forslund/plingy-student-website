@@ -1,0 +1,41 @@
+.jumbotron {
+	background-color: rgba(0, 0, 0, 0);
+	/*background-image: url("k-67-teddy-1365_2.jpg");*/
+  	/*background-repeat: no-repeat;
+  	background-size: cover;*/
+  }
+
+ .backgroundImage {
+ 	background-image: url("HomeIndexBackground.jpg");
+	height: 100vh;
+  	background-repeat: no-repeat;
+  	background-size: cover;
+ }
+
+.centerTextContentJumbo {
+	text-align: center;
+	/*height: 75vh;*/
+}
+
+.centerContentText {
+	text-align: center;
+}
+
+.marginJumbo {
+	margin-top: 10%;
+}
+
+.navbar-brand {
+	margin-left: 5%;
+	font-size: 30px;
+	text-transform: uppercase;
+	letter-spacing: 3px;
+}
+
+#selection02Information {
+	height: 100%;
+}
+
+#scrollDown {
+	margin-top: 15%;
+}

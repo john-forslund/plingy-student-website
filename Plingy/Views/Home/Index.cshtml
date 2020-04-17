@@ -2,7 +2,12 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Try our <a asp-area="" asp-controller="Demo" asp-action="Index">Demo</a>.</p>
+<link rel="stylesheet" type="text/css" href="welcomePage.css">
+
+<div class="jumbotron jumbotron-fluid">
+    <div class="container centerTextContentJumbo">
+        <h1 class="display-4">Keep track of your student records with Plingy!</h1>
+        <p class="lead marginJumbo">Try our amazing demo, why don't you?</p>
+	    <a class="btn btn-primary btn-lg marginJumbo" asp-area="" asp-controller="Demo" asp-action="Index">Test demo</a>
+    </div>
 </div>
