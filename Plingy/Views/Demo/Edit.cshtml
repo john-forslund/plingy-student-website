@@ -1,33 +1,35 @@
 @model Plingy.Models.Student
 
 @{
-    ViewData["Title"] = "Create";
+    ViewData["Title"] = "Edit";
 }
 
-<h1>Create</h1>
+<h1>Edit</h1>
 
 <h4>Student</h4>
 <hr />
 <div class="row">
-    <div class="col-md-8">
-        <form asp-action="Create">
+    <div class="col-md-4">
+        <form asp-action="Edit">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="StudentID" />
             <div class="form-group">
-                <label asp-for="Name" class="control-label">Name</label>
+                <label asp-for="Name" class="control-label"></label>
                 <input asp-for="Name" class="form-control" />
                 <span asp-validation-for="Name" class="text-danger"></span>
             </div>
-            <div class="form-group form-check">
-                <label class="form-check-label"></label>
-                <input class="form-check-input" asp-for="ActiveStudent" />Active student
-            </div>
             <div class="form-group">
-                <label asp-for="JoinDate" class="control-label">Member since</label>
+                <label asp-for="JoinDate" class="control-label"></label>
                 <input asp-for="JoinDate" class="form-control" />
                 <span asp-validation-for="JoinDate" class="text-danger"></span>
             </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="ActiveStudent" /> @Html.DisplayNameFor(model => model.ActiveStudent)
+                </label>
+            </div>
             <div class="form-group">
-                <label asp-for="Address" class="control-label">Address</label>
+                <label asp-for="Address" class="control-label"></label>
                 <input asp-for="Address" class="form-control" />
                 <span asp-validation-for="Address" class="text-danger"></span>
             </div>
@@ -36,10 +38,24 @@
                 <input name="selectedAllergies" type="text" id="new_allergy_1">
                 <button type="button" onclick="addInput()">+</button>
                 <button type="button" onclick="removeInput()">-</button>
-                <div id="new_chq"></div>
-                <input type="hidden" value="1" id="total_chq">
+                <div id="new_chq">
+                    @{ var cntr = 1; }
+                    @{ var firstAllergy = ""; }
+                    @foreach (var allergy in Model.StudentsAllergies) {
+                        if (cntr == 1) {
+                            firstAllergy = allergy.Allergy;
+                            cntr = cntr + 1;
+                        } else {
+                            cntr = cntr + 1;
+                            var idName = "new_allergy_" + cntr;
+                            <input name='selectedAllergies' type='text' id=@idName value=@allergy.Allergy>
+                        }
+                    }
+                    
+                </div>
+                <input type="hidden" value=@cntr id="total_chq">
             </div>
-            
+
             <script type="text/javascript">
                 function addInput(){
                     var new_chq_no = parseInt($('#total_chq').val())+1;
@@ -55,11 +71,12 @@
                         $('#total_chq').val(last_chq_no-1);
                     }
                 }
+
+                document.getElementById("new_allergy_1").value = "@firstAllergy";
             </script>
-            
-            <br/>
+
             <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+                <input type="submit" value="Save" class="btn btn-primary" />
             </div>
         </form>
     </div>
@@ -68,11 +85,6 @@
 <div>
     <a asp-action="Index">Back to List</a>
 </div>
-
-<script type="text/javascript">
-</script>
-
-
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}

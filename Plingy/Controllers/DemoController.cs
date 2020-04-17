@@ -36,8 +36,8 @@ namespace Plingy.Controllers
             {
                 return NotFound();
             }
-
             var student = await _context.Student
+                .Include(a => a.StudentsAllergies)
                 .FirstOrDefaultAsync(m => m.StudentID == id);
             if (student == null)
             {
@@ -65,24 +65,19 @@ namespace Plingy.Controllers
             {
                 _context.Add(student);
                 await _context.SaveChangesAsync();
-                //var allergy = new Allergies {
-                //    StudentID = student.StudentID,
-                //    Allergy = selectedAllergy };
-                //_context.Add(allergy);
-                //await _context.SaveChangesAsync();
 
                 if (selectedAllergies.Length != 0) {
                     var allergies = new List<Allergies>();
-                    Console.WriteLine("selectedAllergies.Length:" + selectedAllergies.Length);
-                    Console.WriteLine("selectedAllergies:");
-                    Array.ForEach(selectedAllergies, Console.WriteLine);
+                    //Console.WriteLine("selectedAllergies.Length:" + selectedAllergies.Length);
+                    //Console.WriteLine("selectedAllergies:");
+                    //Array.ForEach(selectedAllergies, Console.WriteLine);
                     for (var i = 0; i < selectedAllergies.Length; i++) {
                         if (String.IsNullOrEmpty(selectedAllergies[i]) == false) {
-                            Console.WriteLine(selectedAllergies[i] + " is NOT empty!");
+                            //Console.WriteLine(selectedAllergies[i] + " is NOT empty!");
                             allergies.Add(new Allergies { StudentID = student.StudentID,
                                                         Allergy = selectedAllergies[i]});
                         } else {
-                            Console.WriteLine(selectedAllergies[i] + " is empty!");
+                            //Console.WriteLine(selectedAllergies[i] + " is empty!");
                         }
                     }
                     _context.AddRange(allergies);
@@ -105,7 +100,10 @@ namespace Plingy.Controllers
                 return NotFound();
             }
 
-            var student = await _context.Student.FindAsync(id);
+            var student = await _context.Student
+                .Include(a => a.StudentsAllergies)
+                .FirstOrDefaultAsync(m => m.StudentID == id);
+
             if (student == null)
             {
                 return NotFound();
@@ -118,7 +116,7 @@ namespace Plingy.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("StudentID,Name,JoinDate,ActiveStudent,Address")] Student student)
+        public async Task<IActionResult> Edit(int id, [Bind("StudentID,Name,JoinDate,ActiveStudent,Address")] Student student, string[] selectedAllergies)
         {
             if (id != student.StudentID)
             {
@@ -131,6 +129,38 @@ namespace Plingy.Controllers
                 {
                     _context.Update(student);
                     await _context.SaveChangesAsync();
+
+                    var test = await _context.Student
+                        .Include(a => a.StudentsAllergies)
+                        .FirstOrDefaultAsync(m => m.StudentID == id);
+                    
+                    var currentAllergies = test.StudentsAllergies;
+                    
+                    Console.WriteLine("currentAllergies:");
+                    Console.WriteLine(currentAllergies);
+                    Array.ForEach(selectedAllergies, Console.WriteLine);
+
+                    if (selectedAllergies.Length != 0) {
+                        var allergies = new List<Allergies>();
+                        //Console.WriteLine("selectedAllergies.Length:" + selectedAllergies.Length);
+                        //Console.WriteLine("selectedAllergies:");
+                        //Array.ForEach(selectedAllergies, Console.WriteLine);
+                        for (var i = 0; i < selectedAllergies.Length; i++) {
+                            if (String.IsNullOrEmpty(selectedAllergies[i]) == false) {
+                                //Console.WriteLine(selectedAllergies[i] + " is NOT empty!");
+
+                                allergies.Add(new Allergies { StudentID = student.StudentID,
+                                                            Allergy = selectedAllergies[i]});
+                            } else {
+                                //Console.WriteLine(selectedAllergies[i] + " is empty!");
+                            }
+                        }
+                        _context.Allergies.RemoveRange(currentAllergies);
+                        _context.AddRange(allergies);
+                        await _context.SaveChangesAsync();
+                    } else {
+                        Console.WriteLine("selectedAllergies empty!");
+                    }
                 }
                 catch (DbUpdateConcurrencyException)
                 {
@@ -157,6 +187,7 @@ namespace Plingy.Controllers
             }
 
             var student = await _context.Student
+                .Include(a => a.StudentsAllergies)
                 .FirstOrDefaultAsync(m => m.StudentID == id);
             if (student == null)
             {

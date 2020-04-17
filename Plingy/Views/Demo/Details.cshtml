@@ -1,0 +1,40 @@
+@model Plingy.Models.Student
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Student</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">Name</dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+        <dt class = "col-sm-2">Member since</dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.JoinDate)
+        </dd>
+        <dt class = "col-sm-2">Active student</dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ActiveStudent)
+        </dd>
+        <dt class = "col-sm-2">Address</dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Address)
+        </dd>
+        <dt class = "col-sm-2">Allergies</dt>
+        <dd class = "col-sm-10">
+            @foreach (var allergy in Model.StudentsAllergies) {
+                @allergy.Allergy <br />
+            }
+        </dd>
+    </dl>
+</div>
+<div>
+    <!--<a asp-action="Edit" asp-route-id="@Model.StudentID">Edit</a> |-->
+    <a asp-action="Index">Back to List</a>
+</div>

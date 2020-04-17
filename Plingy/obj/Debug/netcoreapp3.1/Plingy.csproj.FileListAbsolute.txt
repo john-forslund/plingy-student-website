@@ -315,3 +315,6 @@ C:\Users\Admin-dator\plingy-student-website\Plingy\obj\Debug\netcoreapp3.1\Razor
 C:\Users\Admin-dator\plingy-student-website\Plingy\obj\Debug\netcoreapp3.1\Razor\Views\Student\Index.cshtml.g.cs
 C:\Users\Admin-dator\plingy-student-website\Plingy\obj\Debug\netcoreapp3.1\Razor\Views\Demo\Index.cshtml.g.cs
 C:\Users\Admin-dator\plingy-student-website\Plingy\obj\Debug\netcoreapp3.1\Razor\Views\Demo\Create.cshtml.g.cs
+C:\Users\Admin-dator\plingy-student-website\Plingy\obj\Debug\netcoreapp3.1\Razor\Views\Demo\Details.cshtml.g.cs
+C:\Users\Admin-dator\plingy-student-website\Plingy\obj\Debug\netcoreapp3.1\Razor\Views\Demo\Delete.cshtml.g.cs
+C:\Users\Admin-dator\plingy-student-website\Plingy\obj\Debug\netcoreapp3.1\Razor\Views\Demo\Edit.cshtml.g.cs

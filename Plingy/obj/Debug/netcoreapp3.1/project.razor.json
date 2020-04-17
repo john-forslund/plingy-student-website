@@ -20571,8 +20571,18 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\Admin-dator\\plingy-student-website\\Plingy\\Views\\Demo\\Edit.cshtml",
+      "TargetPath": "Views\\Demo\\Edit.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\Admin-dator\\plingy-student-website\\Plingy\\Views\\Student\\Delete.cshtml",
       "TargetPath": "Views\\Student\\Delete.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Admin-dator\\plingy-student-website\\Plingy\\Views\\Demo\\Delete.cshtml",
+      "TargetPath": "Views\\Demo\\Delete.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -20583,6 +20593,11 @@
     {
       "FilePath": "c:\\Users\\Admin-dator\\plingy-student-website\\Plingy\\Views\\Student\\Details.cshtml",
       "TargetPath": "Views\\Student\\Details.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Admin-dator\\plingy-student-website\\Plingy\\Views\\Demo\\Details.cshtml",
+      "TargetPath": "Views\\Demo\\Details.cshtml",
       "FileKind": "mvc"
     },
     {
